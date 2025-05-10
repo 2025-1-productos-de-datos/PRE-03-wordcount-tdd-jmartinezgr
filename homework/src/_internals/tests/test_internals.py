@@ -5,7 +5,7 @@ from ..count_words import count_words
 from ..preprocess_lines import preprocess_lines
 from ..read_all_lines import read_all_lines
 from ..split_into_words import split_into_words
-from ..write_word_counts import write_word_counts
+from ..write_word_counts import write_count_words
 
 
 def test_read_all_lines():
@@ -44,7 +44,7 @@ def test_write_word_counts():
     if os.path.exists(output_folder):
         shutil.rmtree(output_folder)
 
-    write_word_counts(output_folder, word_counts)
+    write_count_words(word_counts, output_folder)
 
     output_file = os.path.join(output_folder, "wordcount.tsv")
     assert os.path.exists(output_file), "Output file was not created"
